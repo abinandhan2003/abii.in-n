@@ -1,0 +1,12 @@
+/* ============================
+   App-level styles
+   ============================ */
+.app {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Page transition wrapper */
+.page {
+  min-height: 100vh;
+}

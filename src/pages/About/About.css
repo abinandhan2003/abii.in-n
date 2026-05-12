@@ -1,0 +1,555 @@
+/* ============================
+   About Page
+   ============================ */
+
+/* Hero */
+.about-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 10rem 0 4rem;
+}
+
+.about-hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.about-hero__line {
+  height: 3px;
+  background: var(--color-accent);
+  margin-top: 1.5rem;
+  border-radius: 2px;
+}
+
+/* Section Title */
+.about-section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 2.5rem;
+}
+
+/* Journey */
+.about-journey {
+  padding: 6rem 0;
+}
+
+.about-journey__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-journey__heading {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  position: sticky;
+  top: 6rem;
+}
+
+.about-journey__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-journey__content p {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.85;
+}
+
+/* Profiles */
+.about-profiles {
+  padding: 6rem 0;
+  background: var(--color-bg-alt);
+}
+
+.profiles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+.profile-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.profile-card-wrapper>div {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+}
+
+/* GitHub Card */
+.github-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: 16px;
+  padding: 2.5rem;
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.github-card:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+}
+
+.github-card__header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.github-card__avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+}
+
+.github-card__info h3 {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.github-card__username {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  transition: color 0.3s ease;
+}
+
+.github-card__username:hover {
+  color: var(--color-accent);
+}
+
+.github-card__bio {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.github-card__stats {
+  display: flex;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  margin-bottom: 1.5rem;
+}
+
+.github-card__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.github-card__stat-value {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.github-card__stat-label {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.github-card__link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  transition: color 0.3s ease;
+  margin-top: auto;
+}
+
+.github-card__link:hover {
+  color: var(--color-accent-hover);
+}
+
+/* Google Developer Card */
+.gdg-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2.5rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: 16px;
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.gdg-card:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+}
+
+.gdg-card__logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gdg-card__content {
+  flex: 1;
+}
+
+.gdg-card__name {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.gdg-card__role {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.gdg-card__desc {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.gdg-card__link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+  margin-top: auto;
+}
+
+.gdg-card__link:hover {
+  color: var(--color-accent-hover);
+}
+
+/* Badges */
+.about-badges {
+  padding: 4rem 0;
+  background: var(--color-bg-alt);
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.25rem;
+}
+
+.badge-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: 12px;
+  padding: 1.75rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  cursor: default;
+}
+
+.badge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+  border-color: var(--badge-color, var(--color-border));
+}
+
+.badge-card__icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.badge-card__name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+}
+
+/* Certifications */
+.about-certifications {
+  padding: 6rem 0 8rem;
+}
+
+.certifications-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6rem 2rem;
+}
+
+.cert-bento-item.span-1 {
+  grid-column: span 1;
+}
+
+.cert-bento-item.span-2 {
+  grid-column: span 2;
+}
+
+.cert-bento-item.span-3 {
+  grid-column: span 3;
+}
+
+.cert-bento-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-bento-parallax {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cert-bento-parallax>div {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+}
+
+/* Desktop Vertical Card Modifiers */
+.cert-card--vertical {
+  flex-direction: column;
+}
+
+.cert-card--vertical .cert-card__icon-container {
+  width: 100%;
+  height: 120px;
+  border-right: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cert-card--vertical .cert-card__title-row,
+.cert-card--vertical .cert-card__issuer-row,
+.cert-card--vertical .cert-card__date-row {
+  padding: 1.25rem 1.5rem;
+}
+
+.cert-card--vertical .cert-card__arrow {
+  width: 100%;
+  padding: 1rem;
+  border-left: none;
+  border-top: 1px solid var(--color-border);
+}
+
+.cert-card--vertical:hover .cert-card__arrow svg {
+  transform: translateY(4px);
+}
+
+.cert-card {
+  display: flex;
+  align-items: stretch;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.cert-card:hover {
+  border-color: var(--color-text);
+  box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.02);
+}
+
+.cert-card__icon-container {
+  width: 120px;
+  background: var(--color-bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-right: 1px solid var(--color-border);
+}
+
+.cert-card__icon {
+  font-size: 2.5rem;
+}
+
+.cert-card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-card__title-row,
+.cert-card__issuer-row,
+.cert-card__date-row {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cert-card__date-row {
+  border-bottom: none;
+  flex: 1;
+}
+
+.cert-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.cert-card__issuer {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.cert-card__date {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cert-card__arrow {
+  width: 80px;
+  border-left: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cert-card:hover .cert-card__arrow {
+  background: var(--color-text);
+  color: white;
+}
+
+.cert-card__arrow svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover .cert-card__arrow svg {
+  transform: translateX(4px);
+}
+
+/* ============================
+   Responsive — About
+   ============================ */
+@media (max-width: 1024px) {
+  .certifications-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cert-bento-item.span-1,
+  .cert-bento-item.span-2,
+  .cert-bento-item.span-3 {
+    grid-column: span 1;
+  }
+
+  .cert-bento-item:nth-child(5) {
+    grid-column: span 2;
+  }
+
+  .cert-card {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .cert-card__icon-container {
+    width: 100%;
+    height: 120px;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cert-card__title-row,
+  .cert-card__issuer-row,
+  .cert-card__date-row {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .cert-card__arrow {
+    width: 100%;
+    padding: 1rem;
+    border-left: none;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cert-card:hover .cert-card__arrow svg {
+    transform: translateY(4px);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-journey__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-journey__heading {
+    position: static;
+  }
+
+  .profiles-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .gdg-card {
+    align-items: center;
+    text-align: center;
+  }
+
+  .gdg-card__link {
+    align-self: center;
+  }
+
+  .badges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .certifications-list {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-bento-item.span-1,
+  .cert-bento-item.span-2,
+  .cert-bento-item.span-3,
+  .cert-bento-item:nth-child(5) {
+    grid-column: span 1;
+  }
+}
