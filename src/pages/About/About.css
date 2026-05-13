@@ -371,99 +371,100 @@
 
 .cert-card {
   display: flex;
-  align-items: stretch;
+  flex-direction: column;
   background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid var(--color-border-light);
+  border-radius: 20px;
+  padding: 2.5rem;
+  transition: all 0.5s var(--transition-smooth);
   position: relative;
   overflow: hidden;
   height: 100%;
+  cursor: pointer;
 }
 
 .cert-card:hover {
-  border-color: var(--color-text);
-  box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.02);
+  border-color: var(--color-accent);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+  transform: translateY(-8px);
 }
 
-.cert-card__icon-container {
-  width: 120px;
-  background: var(--color-bg-alt);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  border-right: 1px solid var(--color-border);
+.cert-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: var(--color-accent);
+  transition: height 0.4s ease;
 }
 
-.cert-card__icon {
-  font-size: 2.5rem;
+.cert-card:hover::after {
+  height: 100%;
 }
 
 .cert-card__content {
   flex: 1;
   display: flex;
   flex-direction: column;
-}
-
-.cert-card__title-row,
-.cert-card__issuer-row,
-.cert-card__date-row {
-  padding: 1.5rem 2rem;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.cert-card__date-row {
-  border-bottom: none;
-  flex: 1;
+  gap: 1.25rem;
 }
 
 .cert-card__title {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   margin: 0;
   line-height: 1.2;
+  color: var(--color-text);
+  max-width: 90%;
 }
 
 .cert-card__issuer {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-text-secondary);
-  margin: 0;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
 .cert-card__date {
-  font-size: 0.95rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
   color: var(--color-text-muted);
-  line-height: 1.6;
-  margin: 0;
+  margin-top: auto;
 }
 
 .cert-card__arrow {
-  width: 80px;
-  border-left: 1px solid var(--color-border);
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.4s var(--transition-smooth);
+  opacity: 0;
+  transform: translateX(-10px);
 }
 
 .cert-card:hover .cert-card__arrow {
-  background: var(--color-text);
+  opacity: 1;
+  transform: translateX(0);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
   color: white;
 }
 
 .cert-card__arrow svg {
-  width: 24px;
-  height: 24px;
-  transition: transform 0.3s ease;
-}
-
-.cert-card:hover .cert-card__arrow svg {
-  transform: translateX(4px);
+  width: 18px;
+  height: 18px;
 }
 
 /* ============================
@@ -485,32 +486,11 @@
   }
 
   .cert-card {
-    flex-direction: column;
-    text-align: left;
+    padding: 2rem;
   }
 
-  .cert-card__icon-container {
-    width: 100%;
-    height: 120px;
-    border-right: none;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .cert-card__title-row,
-  .cert-card__issuer-row,
-  .cert-card__date-row {
-    padding: 1.25rem 1.5rem;
-  }
-
-  .cert-card__arrow {
-    width: 100%;
-    padding: 1rem;
-    border-left: none;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .cert-card:hover .cert-card__arrow svg {
-    transform: translateY(4px);
+  .cert-card__title {
+    font-size: 1.5rem;
   }
 }
 
@@ -551,5 +531,236 @@
   .cert-bento-item.span-3,
   .cert-bento-item:nth-child(5) {
     grid-column: span 1;
+  }
+}
+
+/* ============================
+   Resume Terminal
+   ============================ */
+.about-resume {
+  padding: 8rem 0;
+  background: var(--color-bg);
+}
+
+.resume-terminal {
+  background: #0d1117;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+  border: 1px solid #30363d;
+  font-family: var(--font-mono);
+}
+
+.resume-terminal__header {
+  background: #161b22;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-bottom: 1px solid #30363d;
+}
+
+.resume-terminal__buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot--red { background: #ff5f56; }
+.dot--yellow { background: #ffbd2e; }
+.dot--green { background: #27c93f; }
+
+.resume-terminal__title {
+  color: #8b949e;
+  font-size: 0.8rem;
+  flex: 1;
+  text-align: center;
+  margin-right: 4rem; /* Offset for buttons to center title */
+}
+
+.resume-terminal__body {
+  padding: 2.5rem;
+  color: #c9d1d9;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-height: 700px;
+  overflow-y: auto;
+}
+
+/* Custom Scrollbar for Terminal */
+.resume-terminal__body::-webkit-scrollbar {
+  width: 8px;
+}
+.resume-terminal__body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.resume-terminal__body::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+
+.terminal-line {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.terminal-prompt {
+  color: #58a6ff;
+  font-weight: bold;
+}
+
+.terminal-command {
+  color: #ffffff;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.2em;
+  background: #58a6ff;
+  animation: blink 1s infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Resume Content Styles */
+.resume-content {
+  padding: 0.5rem 0;
+}
+
+.resume-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px dashed #30363d;
+  padding-bottom: 1.5rem;
+}
+
+.resume-name {
+  color: #58a6ff;
+  font-size: 1.75rem;
+  font-family: var(--font-mono);
+  margin-bottom: 0.5rem;
+}
+
+.resume-contact {
+  color: #8b949e;
+  font-size: 0.85rem;
+}
+
+.resume-section {
+  margin-bottom: 2.5rem;
+}
+
+.resume-section-title {
+  color: #79c0ff;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resume-section-title::before {
+  content: '#';
+  color: #8b949e;
+}
+
+.resume-skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.resume-skills-list li::before {
+  content: '- ';
+  color: #58a6ff;
+}
+
+.resume-item {
+  margin-bottom: 2rem;
+}
+
+.resume-item:last-child {
+  margin-bottom: 0;
+}
+
+.resume-item-header {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.resume-item-sub {
+  color: #8b949e;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.resume-item-meta {
+  color: #d29922;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.resume-item-bullets {
+  list-style: none;
+  padding-left: 1.25rem;
+}
+
+.resume-item-bullets li {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.resume-item-bullets li::before {
+  content: '•';
+  position: absolute;
+  left: -1.25rem;
+  color: #58a6ff;
+}
+
+.resume-cert-list, .resume-profiles-list {
+  list-style: none;
+  padding: 0;
+}
+
+.resume-cert-list li::before, .resume-profiles-list li::before {
+  content: '→ ';
+  color: #58a6ff;
+}
+
+.resume-profiles-list a {
+  color: #58a6ff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.resume-profiles-list a:hover {
+  color: #79c0ff;
+}
+
+@media (max-width: 768px) {
+  .resume-terminal__body {
+    padding: 1.5rem;
+  }
+  
+  .resume-skills-list {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-terminal__title {
+    display: none;
   }
 }

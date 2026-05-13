@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "title": "Google Data Analytics Certificate",
+    "issuer": "Coursera",
+    "date": "",
+    "url": "",
+    "image": "/images/cert-google-analytics.png"
+  },
+  {
+    "id": 2,
+    "title": "MongoDB Node.js Developer Path for SmartBridge",
+    "issuer": "MongoDB",
+    "date": "",
+    "url": "",
+    "image": "/images/cert-mongodb.png"
+  },
+  {
+    "id": 3,
+    "title": "Introduction to Model Context Protocol",
+    "issuer": "Anthropic",
+    "date": "",
+    "url": "",
+    "image": "/images/cert-mcp.png"
+  },
+  {
+    "id": 4,
+    "title": "React Js",
+    "issuer": "Great Learning",
+    "date": "",
+    "url": "",
+    "image": "/images/cert-react.png"
+  },
+  {
+    "id": 5,
+    "title": "CSS & JS",
+    "issuer": "Udemy",
+    "date": "",
+    "url": "",
+    "image": "/images/cert-css-js.png"
+  },
+  {
+    "id": 6,
+    "title": "JavaScript",
+    "issuer": "Great Learning",
+    "date": "",
+    "url": "",
+    "image": "/images/cert-js.png"
+  },
+  {
+    "id": 7,
+    "title": "Web Design",
+    "issuer": "IIT Delhi",
+    "date": "",
+    "url": "",
+    "image": "/images/cert-webdesign.png"
+  },
+  {
+    "id": 8,
+    "title": "TailwindCSS",
+    "issuer": "Great Learning",
+    "date": "",
+    "url": "",
+    "image": "/images/cert-tailwind.png"
+  }
+]

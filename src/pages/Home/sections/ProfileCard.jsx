@@ -12,7 +12,7 @@ export default function ProfileCard() {
         <AnimateOnScroll animation="fadeUp" duration={0.8}>
           <div className="profile-card" onClick={() => navigate('/about')} role="button" tabIndex={0}>
             <div className="profile-card__avatar">
-              <img src={abipic} alt="" />
+              <img src={abipic} alt="Abi Nandhan - Frontend Engineer and UI Designer" />
             </div>
 
             <div className="profile-card__info">

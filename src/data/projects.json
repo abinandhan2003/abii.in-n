@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "tag": "AI COMPANY",
+    "title": "DunRite Tech",
+    "desc": "DunRite Tech is a leading AI development company in Florida, USA,",
+    "url": "https://www.dunritetech.com/",
+    "image": "/images/dunrite.png",
+    "tech": ["AI", "Development"]
+  },
+  {
+    "id": 2,
+    "tag": "PLATFORM",
+    "title": "NxtGener",
+    "desc": "Trusted by 500+ Students. One Smart Platform for Your International Education Journey.",
+    "url": "https://www.nxtgener.com/home",
+    "image": "/images/nxtgener.png",
+    "tech": ["Education", "Platform"]
+  },
+  {
+    "id": 3,
+    "tag": "WEBSITE",
+    "title": "Mlawyer",
+    "desc": "Your Legal Partner Just a Tap Away",
+    "url": "https://www.mlawyer.in/",
+    "image": "/images/mlawyer.png",
+    "tech": ["React", "CSS"]
+  },
+  {
+    "id": 4,
+    "tag": "WEBSITE",
+    "title": "Suvai Essence of India",
+    "desc": "Essence of India is a Catering & Street Food service",
+    "url": "https://www.suvaieoi.de/",
+    "image": "/images/suvai.png",
+    "tech": ["React", "CSS"]
+  },
+  {
+    "id": 5,
+    "tag": "WEB APPLICATION",
+    "title": "Background Remover",
+    "desc": "Remove Image Backgrounds automatically in Seconds and for Free.",
+    "url": "https://removebg.abii.in/0128",
+    "image": "/images/removebg.png",
+    "tech": ["React", "Python", "API"]
+  },
+  {
+    "id": 6,
+    "tag": "AI",
+    "title": "Ai Chatbot",
+    "desc": "A creative and interactive project designed to improve user experience.",
+    "url": "https://lucy.abii.in/",
+    "image": "/images/lucy.png",
+    "tech": ["React", "OpenAI"]
+  },
+  {
+    "id": 7,
+    "tag": "PLATFORM",
+    "title": "Dark Hubs",
+    "desc": "Free platform to download software and games.",
+    "url": "https://darkhubs.netlify.app/",
+    "image": "/images/darkhub.png",
+    "tech": ["HTML", "CSS", "JS"]
+  },
+  {
+    "id": 8,
+    "tag": "WEB APPLICATION",
+    "title": "Weather Application",
+    "desc": "A simple weather application that provides current weather information.",
+    "url": "/projects/weather-application",
+    "image": "/images/weather.png",
+    "tech": ["React", "Weather API"]
+  },
+  {
+    "id": 9,
+    "tag": "PLATFORM",
+    "title": "A Games",
+    "desc": "Online games platform. Only frontend.",
+    "url": "https://a-games.netlify.app/",
+    "image": "/images/agames.png",
+    "tech": ["React", "Tailwind"]
+  },
+  {
+    "id": 10,
+    "tag": "WEBSITE",
+    "title": "Sky Web",
+    "desc": "My first tailwind project.",
+    "url": "https://skywebs.netlify.app/",
+    "image": "/images/skyweb.png",
+    "tech": ["Tailwind", "HTML"]
+  }
+]

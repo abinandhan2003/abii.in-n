@@ -2,19 +2,6 @@ import { useState } from 'react'
 import AnimateOnScroll from '../../../components/AnimateOnScroll'
 
 export default function GetInTouch() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
-
-  const handleChange = (e) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // mailto fallback
-    const mailtoLink = `mailto:abinandhan77@gmail.com?subject=Portfolio Contact from ${formData.name}&body=${formData.message}%0A%0AFrom: ${formData.name} (${formData.email})`
-    window.open(mailtoLink, '_blank')
-  }
-
   return (
     <section className="get-in-touch" id="get-in-touch">
       <div className="container">
@@ -41,6 +28,15 @@ export default function GetInTouch() {
                   <a href="mailto:abinandhan77@gmail.com">abinandhan77@gmail.com</a>
                 </div>
                 <div className="get-in-touch__info-item">
+                  <a href="https://www.linkedin.com/in/abi-web-nandhan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+                <div className="get-in-touch__info-item">
+                  <a href="https://www.instagram.com/a.b.i_an/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+                <div className="get-in-touch__info-item">
+                  <a href="https://x.com/abiwebdev003" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+                </div>
+                <div className="get-in-touch__info-item">
                   <a href="https://maps.google.com/?q=Chennai" target="_blank" rel="noopener noreferrer">
                     Chennai
                   </a>
@@ -51,7 +47,17 @@ export default function GetInTouch() {
 
           <div className="get-in-touch__right">
             <AnimateOnScroll animation="fadeRight" delay={0.1}>
-              <form className="get-in-touch__form" onSubmit={handleSubmit}>
+              <form 
+                className="get-in-touch__form" 
+                action="https://formsubmit.co/abinandhan77@gmail.com" 
+                method="POST"
+              >
+                {/* Honey pot to prevent spam */}
+                <input type="text" name="_honey" style={{ display: 'none' }} />
+                
+                {/* Disable Captcha */}
+                <input type="hidden" name="_captcha" value="false" />
+
                 <div className="form-group">
                   <label className="form-group__label" htmlFor="contact-name">HAY ABI, MY NAME IS</label>
                   <input
@@ -60,8 +66,6 @@ export default function GetInTouch() {
                     id="contact-name"
                     name="name"
                     placeholder="Your name"
-                    value={formData.name}
-                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -74,8 +78,6 @@ export default function GetInTouch() {
                     id="contact-email"
                     name="email"
                     placeholder="Your email"
-                    value={formData.email}
-                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -87,8 +89,6 @@ export default function GetInTouch() {
                     id="contact-message"
                     name="message"
                     placeholder="Your message"
-                    value={formData.message}
-                    onChange={handleChange}
                     rows={3}
                     required
                   />

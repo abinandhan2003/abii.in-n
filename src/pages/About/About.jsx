@@ -3,48 +3,10 @@ import AnimateOnScroll from '../../components/AnimateOnScroll'
 import Parallax from '../../components/Parallax'
 import { GitHubCalendar } from 'react-github-calendar'
 import './About.css'
+import certificationsData from '../../data/certifications.json'
 import Abipic from '../../../public/profile.png'
 
-const badges = [
-  { name: 'Google Cloud Certified', icon: '☁️', color: '#4285F4' },
-  { name: 'React Developer', icon: '⚛️', color: '#61DAFB' },
-  { name: 'JavaScript Expert', icon: '📜', color: '#F7DF1E' },
-  { name: 'Open Source Contributor', icon: '🌟', color: '#FD8D14' },
-  { name: 'UI/UX Specialist', icon: '🎨', color: '#FF6B6B' },
-]
-
-const certifications = [
-  {
-    title: 'Google UX Design Professional Certificate',
-    issuer: 'Google — Coursera',
-    date: '2024',
-    icon: '🎓',
-  },
-  {
-    title: 'Meta Front-End Developer Professional Certificate',
-    issuer: 'Meta — Coursera',
-    date: '2024',
-    icon: '📋',
-  },
-  {
-    title: 'React — The Complete Guide',
-    issuer: 'Udemy',
-    date: '2023',
-    icon: '⚛️',
-  },
-  {
-    title: 'JavaScript Algorithms and Data Structures',
-    issuer: 'freeCodeCamp',
-    date: '2023',
-    icon: '🏆',
-  },
-  {
-    title: 'Responsive Web Design',
-    issuer: 'freeCodeCamp',
-    date: '2023',
-    icon: '📱',
-  },
-]
+import ResumeTerminal from './sections/ResumeTerminal'
 
 export default function About() {
   return (
@@ -215,41 +177,35 @@ export default function About() {
         </AnimateOnScroll>
 
         <div className="certifications-list">
-          {certifications.map((cert, i) => {
+          {certificationsData.map((cert, i) => {
+            const indexInCycle = i % 5;
             let spanClass = 'span-1';
             let isVertical = false;
 
-            if (i === 0) { spanClass = 'span-2'; }
-            else if (i === 1) { spanClass = 'span-1'; isVertical = true; }
-            else if (i === 2) { spanClass = 'span-1'; isVertical = true; }
-            else if (i === 3) { spanClass = 'span-2'; }
-            else if (i === 4) { spanClass = 'span-3'; }
+            if (indexInCycle === 0) { spanClass = 'span-2'; }
+            else if (indexInCycle === 1) { spanClass = 'span-1'; isVertical = true; }
+            else if (indexInCycle === 2) { spanClass = 'span-1'; isVertical = true; }
+            else if (indexInCycle === 3) { spanClass = 'span-2'; }
+            else if (indexInCycle === 4) { spanClass = 'span-3'; }
 
             const speed = i % 2 === 0 ? 0.4 : 0.8;
 
             return (
               <AnimateOnScroll key={cert.title} animation="fadeUp" delay={i * 0.08} className={`cert-bento-item ${spanClass}`}>
                 <Parallax speed={speed} className="cert-bento-parallax">
-                  <div className={`cert-card ${isVertical ? 'cert-card--vertical' : ''}`}>
-                    <div className="cert-card__icon-container">
-                      <span className="cert-card__icon">{cert.icon}</span>
-                    </div>
+                  <div className={`cert-card ${isVertical ? 'cert-card--vertical' : ''}`} onClick={() => cert.url && window.open(cert.url, '_blank')}>
                     <div className="cert-card__content">
-                      <div className="cert-card__title-row">
-                        <h4 className="cert-card__title">{cert.title}</h4>
-                      </div>
-                      <div className="cert-card__issuer-row">
-                        <p className="cert-card__issuer">{cert.issuer}</p>
-                      </div>
-                      <div className="cert-card__date-row">
-                        <span className="cert-card__date">{cert.date}</span>
-                      </div>
+                      <span className="cert-card__issuer">{cert.issuer}</span>
+                      <h4 className="cert-card__title">{cert.title}</h4>
+                      {cert.date && <span className="cert-card__date">{cert.date}</span>}
                     </div>
-                    <div className="cert-card__arrow">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
-                    </div>
+                    {cert.url && (
+                      <div className="cert-card__arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    )}
                   </div>
                 </Parallax>
               </AnimateOnScroll>
@@ -257,6 +213,8 @@ export default function About() {
           })}
         </div>
       </section>
+
+      <ResumeTerminal />
     </motion.main>
   )
 }

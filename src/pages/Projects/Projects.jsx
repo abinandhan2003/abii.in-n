@@ -3,64 +3,10 @@ import AnimateOnScroll from '../../components/AnimateOnScroll'
 import Parallax from '../../components/Parallax'
 import './Projects.css'
 
-const projects = [
-  {
-    id: 1,
-    tag: 'WEB APPLICATION',
-    title: 'E-Commerce Dashboard',
-    desc: 'A modern admin dashboard built with React featuring real-time analytics visualization, inventory management, and responsive design for seamless cross-device experiences.',
-    tech: ['React', 'Chart.js', 'TailwindCSS'],
-    color: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    link: '#',
-  },
-  {
-    id: 2,
-    tag: 'UI/UX DESIGN',
-    title: 'Portfolio Redesign',
-    desc: 'A minimalist portfolio experience crafted with meticulous attention to typography, whitespace, and motion design. Built with React and Framer Motion.',
-    tech: ['React', 'Framer Motion', 'CSS'],
-    color: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-    link: '#',
-  },
-  {
-    id: 3,
-    tag: 'MOBILE APP',
-    title: 'Travel Companion',
-    desc: 'Cross-platform travel planning application with itinerary management, social features, and offline-first architecture for travelers on the go.',
-    tech: ['React Native', 'Firebase', 'Maps API'],
-    color: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-    link: '#',
-  },
-  {
-    id: 4,
-    tag: 'WEB APPLICATION',
-    title: 'Study Abroad Platform',
-    desc: 'Comprehensive student guidance platform with dynamic content management, interactive destination pages, and an integrated inquiry system.',
-    tech: ['React', 'Node.js', 'MongoDB'],
-    color: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
-    link: '#',
-  },
-  {
-    id: 5,
-    tag: 'WEB APPLICATION',
-    title: 'Catering Management System',
-    desc: 'Full-featured catering menu platform with cart functionality, quantity management, and inquiry submission for event catering services.',
-    tech: ['React', 'Context API', 'CSS Grid'],
-    color: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
-    link: '#',
-  },
-  {
-    id: 6,
-    tag: 'DESIGN SYSTEM',
-    title: 'Component Library',
-    desc: 'A reusable component library with consistent design tokens, accessible patterns, and comprehensive documentation for rapid UI development.',
-    tech: ['React', 'Storybook', 'CSS Variables'],
-    color: 'linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)',
-    link: '#',
-  },
-]
+import projectsData from '../../data/projects.json'
 
 export default function Projects() {
+  const projects = projectsData;
   return (
     <motion.main
       className="page projects-page"
@@ -110,8 +56,9 @@ export default function Projects() {
               delay={i % 2 === 0 ? 0 : 0.15}
             >
               <Parallax speed={i % 2 === 0 ? 0.04 : -0.04}>
-                <a href={project.link} className="project-listing-card" target="_blank" rel="noopener noreferrer">
-                  <div className="project-listing-card__image" style={{ background: project.color }}>
+                <a href={project.url} className="project-listing-card" target="_blank" rel="noopener noreferrer">
+                  <div className="project-listing-card__image">
+                    <img src={project.image} alt={project.title} />
                     <div className="project-listing-card__number">
                       {String(project.id).padStart(2, '0')}
                     </div>
@@ -120,11 +67,6 @@ export default function Projects() {
                     <span className="project-listing-card__tag">{project.tag}</span>
                     <h3 className="project-listing-card__title">{project.title}</h3>
                     <p className="project-listing-card__desc">{project.desc}</p>
-                    <div className="project-listing-card__tech">
-                      {project.tech.map(t => (
-                        <span key={t} className="project-listing-card__tech-tag">{t}</span>
-                      ))}
-                    </div>
                   </div>
                 </a>
               </Parallax>
